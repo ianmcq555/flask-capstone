@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>User Info</h1>
+
+
+<div class="card" style="width: 18rem;">
+    <div class="card-header">
+      Here's Your Info
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">{{ current_user.username }}</li>
+      <li class="list-group-item">{{ current_user.first_name }}</li>
+      <li class="list-group-item">{{ current_user.last_name }}</li>
+      <li class="list-group-item">{{ current_user.email }}</li>
+    </ul>
+  </div>
+
+
+<a class="btn btn-primary" href="{{ url_for('auth.updateUser', user_id=current_user.id) }}">Update</a>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Delete
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Are you sure you want to delete?</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                This action cannot be undo...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <a type="button" class="btn btn-danger"
+                    href="{{ url_for('auth.deleteUser', user_id=current_user.id) }}">Delete</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

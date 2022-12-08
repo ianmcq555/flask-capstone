@@ -1,0 +1,22 @@
+<nav class="navbar navbar-expand-lg bg-red">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">NutriLog</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          {% if current_user.is_authenticated %}
+          <a class="nav-link" href="/user">Hello, {{ current_user.username.title() }}</a>
+          <a class="nav-link" href="/nutrition">Diary</a>
+          <a class="nav-link" href="/nutrition/search">Search Nutrition</a>
+          <a class="nav-link" href="/logout">Log Out</a>
+          {% else %}
+          <a class="nav-link active" aria-current="page" href="/signup">Sign Up</a>
+          <a class="nav-link" href="/login">Login</a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </nav>

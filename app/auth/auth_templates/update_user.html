@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Update Your Info</h1>
+
+<form method="POST">
+
+    {{ form.hidden_tag() }}
+
+    {{ form.username(class='form-control', placeholder='Username', value=user.username) }}
+    {{ form.first_name(class='form-control', placeholder='First Name', value=user.first_name) }}
+    {{ form.last_name(class='form-control', placeholder='Last Name', value=user.last_name) }}
+    {{ form.email(class='form-control', placeholder='Email', value=user.email) }}
+    {{ form.password(class='form-control', placeholder='Password') }}
+    {{ form.confirm_password(class='form-control', placeholder='Confirm Password') }}
+    {{ form.submit(class='btn btn-primary') }}
+</form>
+
+
+{% endblock %}

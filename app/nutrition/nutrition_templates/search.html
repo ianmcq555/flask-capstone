@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Search Nutrition Info</h1>
+
+<form method="POST">
+
+    {{ form.hidden_tag() }}
+
+    {{ form.name(class='form-control', placeholder='Search Food') }}
+    {{ form.submit(class='btn btn-primary') }}
+</form>
+
+
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Nutrition Info</h1>
+
+{% for n in nutritions %}
+
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{ nutrition.name.title() }}</h5>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Serving Size: {{ nutrition.serving_size }}</li>
+    <li class="list-group-item">Calories: {{ nutrition.calories }}</li>
+    <li class="list-group-item">Protein: {{ nutrition.protein }}</li>
+    <li class="list-group-item">Carbs: {{ nutrition.carbs }}</li>
+    <li class="list-group-item">Fat: {{ nutrition.fat }}</li>
+  </ul>
+  <div class="card-body">
+    <a href="{{ url_for('nutrition.addFood', nutrition_id=nutrition.id) }}" class="btn btn-primary">Add to Diary</a>
+    <a href="{{ url_for('nutrition.removeFood', nutrition_id=nutrition.id) }}" class="btn btn-danger">Remove from Diary</a>
+  </div>
+</div>
+{% endfor %}
+
+{% endblock %}

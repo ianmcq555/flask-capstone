@@ -1,0 +1,69 @@
+body,
+html {
+    height: 100%;
+}
+
+footer {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    height: 2rem;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: black;
+}
+#footer{
+    text-align: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    color: red;
+}
+
+nav{
+  width: 100%;
+  background-color: rgba(0,0,0,0.3);  /* Set the transparency to 0.3 */
+  overflow: hidden;
+  
+}
+nav a{
+    padding: 14px 16px;
+    float: left;
+    text-decoration: none;
+    color: red;
+}
+nav a:hover{
+  color: black;
+}
+
+body {
+    background-image: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, 0.9)),url('https://www.mdx.ac.uk/__data/assets/image/0033/318696/Sportsexercisenutrition_herobanner.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+ .column {
+    float: left;
+    width: 20%;
+
+  }
+  
+  /* Remove extra left and right margins, due to padding in columns */
+  .row {margin: 0 -5px;}
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Style the counter cards */
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+    padding: 16px;
+    text-align: center;
+    background-color: #f1f1f1;
+  }

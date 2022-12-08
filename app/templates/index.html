@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Welcome to NutriLog</h1>
+
+
+
+{% if current_user.is_authenticated %}
+<h5>Check Out Your NutriLog!</h5>
+
+{% if name == current_user.username %}
+
+
+
+{% else %}
+
+
+
+{% endif %}
+
+
+{% else %}
+<P>Login or Sign Up Above!</P>
+{% endif %}
+{% if current_user.is_authenticated %}
+
+<p>Get to Logging!</p>
+
+{% else %}
+
+
+{% endif %}
+
+{% endblock %}
